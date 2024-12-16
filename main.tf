@@ -22,7 +22,7 @@
  * module "ecr_kms_key" {
  *   source = "dod-iac/ecr-kms-key/aws"
  *
- *   name = format("alias/app-%s-ecr", var.application, var.environment)
+ *   name = format("alias/%s-%s-ecr", var.application, var.environment)
  *   tags = {
  *     Application = var.application
  *     Automation  = "Terraform"

@@ -1,4 +1,4 @@
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Usage
 
 Creates an AWS ECR repository.
@@ -22,7 +22,7 @@ Creates an AWS ECR repository with container images encrypted using a customer-m
 module "ecr_kms_key" {
   source = "dod-iac/ecr-kms-key/aws"
 
-  name = format("alias/app-%s-ecr", var.application, var.environment)
+  name = format("alias/%s-%s-ecr", var.application, var.environment)
   tags = {
     Application = var.application
     Automation  = "Terraform"
@@ -62,13 +62,13 @@ This project constitutes a work of the United States Government and is not subje
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0, < 5.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.0, ~>5.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0, < 5.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.0, ~>5.0 |
 
 ## Modules
 
@@ -102,4 +102,4 @@ No modules.
 |------|-------------|
 | <a name="output_arn"></a> [arn](#output\_arn) | The Amazon Resource Name (ARN) of the AWS ECR repo. |
 | <a name="output_repository_url"></a> [repository\_url](#output\_repository\_url) | The URL of the repository (in the form aws\_account\_id.dkr.ecr.region.amazonaws.com/repositoryName). |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
